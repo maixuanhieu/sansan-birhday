@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAPPY SAN SAN'S BIRTHDAY</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <audio autoplay="true" allow="autoplay" loop="true" id="audio_bg">
+      <source src="hpbd.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="control-audio open">
+      <i class="icon-control icon-play">
+        <img src="icon-off.png" alt="" />
+      </i>
+      <i class="icon-control icon-pause" style="display: none">
+        <img src="icon-on.png" alt="" />
+      </i>
+    </div>
+    <div class="card">
+      <div class="card__inner">
+        <div class="card__face card__face--front">
+          <h2 style="text-align: center; line-height: 40px">
+            HAPPY <br />
+            SAN SAN'S BIRTHDAY
+          </h2>
+        </div>
+        <div class="card__face card__face--back">
+          <div class="card__content">
+            <div class="card__header">
+              <img src="san-san.jpg" alt="" srcset="" class="fox" />
+              <h2></h2>
+            </div>
+
+            <div class="card__body">
+              <h3>Happy Birthday San San!</h3>
+              <p>
+                Sang tuổi mới vẫn xinh đẹp, dễ
+                thương, đáng yêu nha
+              </p>
+              <p>
+                Luôn tìm được niềm vui trong cuộc sống và hứng khởi trong công
+                việc. Mang tiếng đàn đi khắp nơi.
+              </p>
+              <p>
+                Chân cứng đá mềm, mạnh mẽ vượt qua mọi thử thách phía
+                trước.
+              </p>
+              <br />
+              <p style="padding-left: 190px;">Best wishes for you.</p>
+            </div>
+
+            <!-- <audio id="myAudio" controls autoplay src="ThanhXuanBeat-DaLAB.mp3" type="audio/mpeg" ></audio> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    var audioBg = document.getElementById("audio_bg");
+    $("body").on("click", ".control-audio .icon-control", function () {
+      $(".icon-control").fadeIn();
+
+      $(this).fadeOut();
+      if (audioBg.paused == false) {
+        pauseAudioBg();
+      } else {
+        playAudioBg();
+      }
+    });
+    //   $('body').on('click', '.frame2__pointsNguyenlieu, .btn-timrong', function () {
+    // playAudioBg()
+    //       $('.icon-play').fadeOut();
+    //       $('.icon-pause').fadeIn();
+    // });
+
+    function playAudioBg() {
+      audioBg.play();
+    }
+    function pauseAudioBg() {
+      audioBg.pause();
+    }
+  </script>
+</html>
